@@ -1,0 +1,7 @@
+<div *ngIf="todo">
+  <h2>DETAIL: {{todo.name}}</h2>
+  <label>Name:
+    <input [(ngModel)]="todo.name" placeholder="name"/>
+  </label>
+  <button (click)="patchTodo(todo.name);">Update</button>
+</div>

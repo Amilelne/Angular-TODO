@@ -1,0 +1,10 @@
+div {
+  display: block;
+  margin: 15px;
+}
+button {
+  background-color: royalblue;
+  border: royalblue;
+  color:#fff; 
+}
+

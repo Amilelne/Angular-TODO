@@ -1,0 +1,9 @@
+<div>
+  <h3>ADD TODO</h3>
+  <div>
+    <label>name:
+      <input #todoName />
+    </label>
+    <button (click)="add(todoName.value);todoName.value=''">Add Todo</button>
+  </div>
+</div>
