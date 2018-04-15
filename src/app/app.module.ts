@@ -9,19 +9,23 @@ import { TodoDetailComponent } from './todo-detail/todo-detail.component';
 import { TodoRoutingModule } from './/todo-routing.module';
 import { TodoHomeComponent } from './todo-home/todo-home.component';
 import { TodoAddComponent } from './todo-add/todo-add.component';
+import { AngularDateTimePickerModule } from 'angular2-datetimepicker';
+import { TodoCardComponent } from './todo-card/todo-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoDetailComponent,
     TodoHomeComponent,
-    TodoAddComponent
+    TodoAddComponent,
+    TodoCardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    TodoRoutingModule
+    TodoRoutingModule,
+    AngularDateTimePickerModule
   ],
   providers: [TodoListService],
   bootstrap: [AppComponent]

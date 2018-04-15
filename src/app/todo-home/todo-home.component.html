@@ -1,17 +1,7 @@
-<ul class="todos">
-  <li *ngFor="let todo of todos">
-    <div class="card">
-        <div class="card-body">
-            <p>ID: {{todo.id}}</p>
-            <p>Name: {{todo.name}}</p>
-            <p>Created: {{todo.createdAt | date:'shortTime'}}</p>
-            <p>Updated: {{todo.updatedAt | date:'shortTime'}}</p>
-            <p>Due: {{todo.dueAt | date}}</p>
-          </div>
-          <div class="btn-group">
-            <button routerLink="/detail/{{todo.id}}" class="btn-detail">Detail</button>
-            <button (click)="delete(todo.id);" class="btn-remove">Remove</button>
-          </div>
-    </div>
-  </li>
-</ul>
+<div class="container">
+          <div class="row">
+            <div class="col-md-4" *ngFor="let todo of todos">
+                <app-todo-card [todo]="todo"></app-todo-card>
+            </div>
+          </div>    
+</div>

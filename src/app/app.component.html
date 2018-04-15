@@ -1,12 +1,10 @@
-<nav class="navbar">
+<nav class="navbar bg-dark navbar-dark navbar-expand">
     <a class="navbar-brand" routerLink="/">TODOs App</a>
-    <div class="navbar-collapse">
-        <a routerLink="/home">Home</a>
-        <a routerLink="/add">Add</a>
-    </div>    
+    <div class="collapse navbar-collapse">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" routerLink="/home" routerlinkactive="active" href="/home">Home</a>
+            <a routerLink="/add" class="nav-item nav-link" routerlinkactive="active" href="/add">Add</a>
+        </div>
+    </div>
 </nav>
 <router-outlet></router-outlet>
-
-
-
-

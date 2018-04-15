@@ -1,7 +1,7 @@
 export class Todo {
   id: number;
   name: string;
-  created: Date;
-  updated: Date;
-  due: Date;
+  createdAt: Date;
+  updatedAt: Date;
+  dueAt: Date;
 }

@@ -9,6 +9,14 @@ import { Todo } from '../todo';
 })
 export class TodoAddComponent implements OnInit {
 
+  date:Date = new Date();
+  settings = {
+    bigBanner:true,
+    timePicker:false,
+    format:'dd-MM-yyyy',
+    defaultOpen:true
+  }
+
   constructor(private todoListService: TodoListService) { }
 
   ngOnInit() {
@@ -16,7 +24,15 @@ export class TodoAddComponent implements OnInit {
 
   add(name: string): void {
     name = name.trim();
+    let todo = new Todo();
+    todo.name = name;
+    todo.createdAt = new Date;
+    todo.dueAt = new Date;
     if( !name ) { return; }
-    this.todoListService.addTodo({ name } as Todo);
+    this.todoListService.addTodo(todo).subscribe(
+      {
+        error(err) {console.log(err)}
+      }
+    );
   }
 }

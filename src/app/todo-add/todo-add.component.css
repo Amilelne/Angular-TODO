@@ -1,0 +1,20 @@
+div {
+  display: block;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.row {
+  display:-webkit-box;
+  flex-wrap: wrap;
+}
+.btn button{
+  font-weight: 400;
+  text-align: center;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  line-height: 1.5;
+  color:#fff;
+  background-color: #007bff;
+  border-color:#007bff;
+  margin-top: 15px;
+}

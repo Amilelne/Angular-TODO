@@ -1,9 +1,26 @@
-<div>
-  <h3>ADD TODO</h3>
-  <div>
-    <label>name:
-      <input #todoName />
-    </label>
-    <button (click)="add(todoName.value);todoName.value=''">Add Todo</button>
-  </div>
-</div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  </head>
+  <div class="container">
+    <h3>ADD TODO</h3>
+    <div class="row">
+      <div class="col-2 text-right">Name:</div>
+      <div class="col-4">
+        <input #todoName class="form-control" placeholder="Enter todo name" type="text"/>
+      </div>
+    </div>
+    <div class="row mt-1">
+      <div class="col-2 text-right">Due At:</div>
+      <div class="col-4">
+        <angular2-date-picker [(ngModel)]="date" [settings]="settings"></angular2-date-picker>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-3">
+        <button class="btn btn-primary btn-block" (click)="add(todoName.value);todoName.value=''">Add Todo</button>
+      </div>
+    </div>
+  </div>  
+</html>

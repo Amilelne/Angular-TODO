@@ -5,7 +5,7 @@ import { TodoListService } from '../todo-list.service';
 @Component({
   selector: 'app-todo-home',
   templateUrl: './todo-home.component.html',
-  styleUrls: ['./todo-home.component.css']
+  styleUrls: ['../../scss/bootstrap.scss']
 })
 export class TodoHomeComponent implements OnInit {
 
@@ -21,8 +21,6 @@ export class TodoHomeComponent implements OnInit {
     this.todoListService.getTodos().subscribe(todos => this.todos = todos);
   }
 
-  delete(id: number): void {
-    this.todoListService.deleteTodo(id);
-  }
+  
 
 }

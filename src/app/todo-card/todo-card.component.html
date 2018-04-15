@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-body">
+      <p class="card-text">ID: {{todo.id}}</p>
+      <p class="card-text">Name: {{todo.name}}</p>
+      <p class="card-text">Created: {{todo.createdAt | date:'shortTime'}}</p>
+      <p class="card-text">Updated: {{todo.updatedAt | date:'shortTime'}}</p>
+      <p class="card-text">Due: {{todo.dueAt | date}}</p>
+    </div>
+    <div class="card-body">
+        <div class="btn-group">
+            <button routerLink="/detail/{{todo.id}}" class=" btn btn-info">Detail</button>
+            <button (click)="delete(todo.id);" class="btn btn-danger">Remove</button>
+          </div>
+    </div>
+</div>

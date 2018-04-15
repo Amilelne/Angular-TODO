@@ -7,7 +7,7 @@ import { Todo } from '../todo';
 @Component({
   selector: 'app-todo-detail',
   templateUrl: './todo-detail.component.html',
-  styleUrls: ['./todo-detail.component.css']
+  styleUrls: ['../../scss/bootstrap.scss']
 })
 export class TodoDetailComponent implements OnInit {
   @Input() todo: Todo;
@@ -28,9 +28,12 @@ export class TodoDetailComponent implements OnInit {
       .subscribe(todo => this.todo = todo);
   }
 
-  patchTodo(name: string): void {
+  patchTodo(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.todoService.patchTodo(id,name);
+    this.todoService.patchTodo(id,this.todo.name,this.todo.dueAt).subscribe(
+      data => console.log(data),
+      err => console.error(err)
+    );
   }
 
 }

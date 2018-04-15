@@ -1,7 +1,20 @@
-<div *ngIf="todo">
-  <h2>DETAIL: {{todo.name}}</h2>
-  <label>Name:
-    <input [(ngModel)]="todo.name" placeholder="name"/>
-  </label>
-  <button (click)="patchTodo(todo.name);">Update</button>
+<div *ngIf="todo" class="container">
+  <h4>DETAIL: {{todo.name}}</h4>
+  <div class="row">
+    <div class="col-2 text-right">Name:</div>
+    <div class="col-4">
+      <input class="form-control" [(ngModel)]="todo.name" type="text" />
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-2 text-right">Due At:</div>
+      <div class="col-4">
+        <angular2-date-picker [(ngModel)]="todo.dueAt" [settings]="settings"></angular2-date-picker>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <button class="btn btn-primary btn-block" (click)="patchTodo();">Update Todo</button>
+      </div>
+    </div>
 </div>

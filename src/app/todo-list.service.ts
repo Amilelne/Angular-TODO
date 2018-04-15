@@ -14,17 +14,16 @@ export class TodoListService {
   ) { }
 
   getTodos (): Observable<Todo[]>{
-    return this.http.get<Todo[]>(this.todoListsUrl)
-      .pipe();
+    return this.http.get<Todo[]>(this.todoListsUrl);
   }
 
   addTodo (todo: Todo): Observable<Todo>{
-    return this.http.post<Todo>(this.todoListsUrl, todo).pipe();
+    return this.http.post<Todo>(this.todoListsUrl, todo);
   }
 
   getTodo (id: number): Observable<Todo> {
     const url = `${this.todoListsUrl}/${id}`;
-    return this.http.get<Todo>(url).pipe();
+    return this.http.get<Todo>(url);
   }
 
   deleteTodo (id: number) {
@@ -32,9 +31,9 @@ export class TodoListService {
     return this.http.delete(url);
   }
 
-  patchTodo (id: number, name: string) {
+  patchTodo (id: number, name: string, dueAt:Date) {
     const url = `${this.todoListsUrl}/${id}`;
-    return this.http.patch(url,name);
+    return this.http.patch(url,{name,dueAt});
   }
   
 }
